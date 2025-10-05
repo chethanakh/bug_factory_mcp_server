@@ -1,0 +1,35 @@
+{
+  "name": "bug_factory_mcp_server",
+  "version": "1.0.0",
+  "description": "Welcome to the **Bug Factory MCP Server** repository!   This project was created for the Oct 7 **BugFactory** session, conducted by _Chethana Kalpa_.",
+  "keywords": [
+    "mcp",
+    "mcp server",
+    "bugfactory",
+    "sanmark"
+  ],
+  "homepage": "https://github.com/chethanakh/bug_factory_mcp_server#readme",
+  "bugs": {
+    "url": "https://github.com/chethanakh/bug_factory_mcp_server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chethanakh/bug_factory_mcp_server.git"
+  },
+  "license": "ISC",
+  "author": "chethana@thesanmark.com",
+  "type": "typescript",
+  "main": "src/server.ts",
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+  },
+  "scripts": {
+    "server:build": "tsc",
+    "server:build:watch": "tsc --watch",
+    "server:dev": "tsx src/server.ts"
+  }
+}
