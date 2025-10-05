@@ -18,7 +18,7 @@
   },
   "license": "ISC",
   "author": "chethana@thesanmark.com",
-  "type": "typescript",
+  "type": "commonjs",
   "main": "src/server.ts",
   "devDependencies": {
     "@types/node": "^24.0.3",
