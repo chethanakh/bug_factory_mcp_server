@@ -128,4 +128,24 @@ Sampling is not handled by the MCP server. Implement sampling logic on the clien
         | **idempotentHint**  | `false` if repeated calls may duplicate  | `false`         |
         | **openWorldHint**   | `true` if depends on external systems    | `true`          |
 
+8. How to add mcp to vs code
 
+Cmd + shift + P 
+
+
+9. add new resource
+
+```
+  new ResourceTemplate('greeting://{name}', {
+    list: async () => ({
+      resources: [
+        {
+          name: 'world',
+          uri: 'greeting://world',
+          title: 'World Greeting',
+          description: 'A greeting for the world'
+        }
+      ]
+    })
+  }),
+```
