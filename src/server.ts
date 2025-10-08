@@ -1,5 +1,50 @@
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from 'zod';
+const server = new McpServer({
+   name: 'bugfactory-mcp',
+   version: '1.0.0',
+   capabilities: {
+       resources: {},
+       tools: {},
+       prompts: {},
+   },
+});
+
+server.tool(
+  "create-user",
+  "Create a new user in the database",
+  {
+     name: z.string(),
+     email: z.string(),
+     address: z.string(),
+     phone: z.string(),
+  },
+  {
+     title: "Create User",
+     readOnlyHint: false,
+     destructiveHint: false,
+     idempotentHint: false,
+     openWorldHint: true,
+  },
+  async params => {
+     try {
+        console.log("Params:", params);
+        // const id = await createUser(params);
+        return {
+          content: [{ type: "text", text: `User 1 created successfully` }],
+        };
+     } catch {
+        return {
+          content: [{ type: "text", text: "Failed to save user" }],
+        };
+     }
+  }
+);
+
 async function main() {
-    console.log("Hello, Bug Factory MCP Server!");
+    const transport = new StdioServerTransport();
+    await server.connect(transport);
 }
 
 main()
